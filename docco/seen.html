@@ -2321,8 +2321,8 @@ should correspond to either an SVG or Canvas element.</p>
             <div class="content"><div class='highlight'><pre>seen.<span class="hljs-function"><span class="hljs-title">Context</span> = <span class="hljs-params">(elementId, scene = <span class="hljs-literal">null</span>)</span> -&gt;</span>
   tag = seen.Util.element(elementId)?.tagName.toUpperCase()
   context = <span class="hljs-keyword">switch</span> tag
-    <span class="hljs-keyword">when</span> <span class="hljs-string">'SVG'</span>    <span class="hljs-keyword">then</span> <span class="hljs-keyword">new</span> seen.SvgRenderContext(elementId)
-    <span class="hljs-keyword">when</span> <span class="hljs-string">'CANVAS'</span> <span class="hljs-keyword">then</span> <span class="hljs-keyword">new</span> seen.CanvasRenderContext(elementId)
+    <span class="hljs-keyword">when</span> <span class="hljs-string">'SVG'</span>, <span class="hljs-string">'G'</span> <span class="hljs-keyword">then</span> <span class="hljs-keyword">new</span> seen.SvgRenderContext(elementId)
+    <span class="hljs-keyword">when</span> <span class="hljs-string">'CANVAS'</span>   <span class="hljs-keyword">then</span> <span class="hljs-keyword">new</span> seen.CanvasRenderContext(elementId)
   <span class="hljs-keyword">if</span> context? <span class="hljs-keyword">and</span> scene?
     context.sceneLayer(scene)
   <span class="hljs-keyword">return</span> context</pre></div></div>
